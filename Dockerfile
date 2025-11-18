@@ -30,5 +30,10 @@ COPY . .
 # 6. Instalar dependencias de Laravel
 RUN composer install --no-dev --optimize-autoloader
 
+# Limpia las rutas y la configuración para que la nueva estructura funcione en producción
+RUN php artisan route:clear
+RUN php artisan cache:clear
+# -----------------------------
+
 # 7. Dar permisos a las carpetas de almacenamiento (Storage)
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache

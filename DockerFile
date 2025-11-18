@@ -22,7 +22,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 COPY . .
 
-# 6. Instalar dependencias de Laravel
+# 6. Instalar dependencias de Laravel y render
 RUN composer install --no-dev --optimize-autoloader
 
 # 7. Dar permisos a las carpetas de almacenamiento

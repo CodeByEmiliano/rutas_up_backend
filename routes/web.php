@@ -23,6 +23,10 @@ Route::get('/map', function () {
     return view('map');
 });
 
+Route::get('/vehiculo-gestion', function () {
+    return view('VehiculoGestion');
+});
+
 Route::get('/route-planner', function () {
     return view('route_planner');
 });
@@ -50,8 +54,8 @@ Route::prefix('api/vehiculos')->group(function () {
     Route::get('/', [VehiculoController::class, 'index']);
     Route::post('/store', [VehiculoController::class, 'store']);
     Route::get('{id}', [VehiculoController::class, 'show']);
-    Route::put('{id}', [VehiculoController::class, 'update']);
-    Route::delete('{id}', [VehiculoController::class, 'destroy']);
+    Route::put('/update/{id}', [VehiculoController::class, 'update']);
+    Route::delete('/delete/{id}', [VehiculoController::class, 'destroy']);
 });
 
 // choferes

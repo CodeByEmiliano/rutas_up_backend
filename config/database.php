@@ -85,14 +85,14 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
+            'host' => env('AZURE_PGSQL_HOST', '127.0.0.1'),
+            'port' => env('AZURE_PGSQL_PORT', '5432'),
             
             // Revertimos database a la normalidad
-            'database' => env('DB_DATABASE', 'forge'),
+            'database' => env('AZURE_PGSQL_DATABASE', 'forge'),
             
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'username' => env('AZURE_PGSQL_USERNAME', 'forge'),
+            'password' => env('AZURE_PGSQL_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
